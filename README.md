@@ -1,10 +1,8 @@
 # speedtest_exporter
 
 [![License Apache 2][badge-license]](LICENSE)
-[![GitHub version](https://badge.fury.io/gh/nlamirault%2Fspeedtest_exporter.svg)](https://badge.fury.io/gh/nlamirault%2Fspeedtest_exporter)
 
-* Master : [![Circle CI](https://circleci.com/gh/nlamirault/speedtest_exporter/tree/master.svg?style=svg)](https://circleci.com/gh/nlamirault/speedtest_exporter/tree/master)
-* Develop : [![Circle CI](https://circleci.com/gh/nlamirault/speedtest_exporter/tree/develop.svg?style=svg)](https://circleci.com/gh/nlamirault/speedtest_exporter/tree/develop)
+[![Build Status](https://cloud.drone.io/api/badges/charlieegan3/speedtest_exporter/status.svg)](https://cloud.drone.io/charlieegan3/speedtest_exporter)
 
 This Prometheus exporter check your network connection. Metrics are :
 
