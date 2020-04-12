@@ -28,21 +28,15 @@ RUN adduser -D -g '' appuser
 ADD . ${GOPATH}/src/app/
 WORKDIR ${GOPATH}/src/app
 
-RUN go build -a -installsuffix cgo -ldflags="-w -s" -o /go/bin/speedtest_exporter
+ARG go_arch
+RUN GOARCH=${go_arch} go build -a -installsuffix cgo -ldflags="-w -s" -o /go/bin/speedtest_exporter
 
 # --------------------------------------------------------------------------------
 
-FROM gcr.io/distroless/base
-
-LABEL summary="Speedtest Prometheus exporter" \
-      description="A Prometheus exporter for speedtest" \
-      name="nlamirault/speedtest_exporter" \
-      url="https://github.com/nlamirault/speedtest_exporter" \
-      maintainer="Nicolas Lamirault <nicolas.lamirault@gmail.com>"
+# needed for arm base
+FROM alpine:3.11
 
 COPY --from=builder /go/bin/speedtest_exporter /usr/bin/speedtest_exporter
-
-COPY --from=builder /etc/passwd /etc/passwd
 
 EXPOSE 9112
 
