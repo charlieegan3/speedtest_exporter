@@ -71,7 +71,7 @@ init: ## Install requirements
 	@go get -u github.com/golang/glog
 	@go get -u github.com/kardianos/govendor
 	@go get -u github.com/Masterminds/rmvcsdir
-	@go get -u github.com/golang/lint/golint
+	@go get -u golang.org/x/lint
 	@go get -u github.com/kisielk/errcheck
 	@go get -u golang.org/x/tools/cmd/guru
 	@go get -u github.com/mitchellh/gox
